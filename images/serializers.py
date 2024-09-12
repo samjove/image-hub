@@ -14,8 +14,7 @@ class ImageSerializer(serializers.ModelSerializer):
 class ImageTransformationSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImageTransformation
-        fields = ['id', 'image', 'transformation_type', 'transformation_parameters', 'transformed_url', 'created_at']
-        read_only_fields = ['id', 'transformed_url', 'created_at']
+        fields = ['id', 'transformation_type', "transformation_parameters", "transformed_url"]
 
     def create(self, validated_data):
         return super().create(validated_data)
