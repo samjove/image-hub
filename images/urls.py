@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import upload_image
+from .views import ImageAPIView, ImageTransformationAPIView
 
 urlpatterns = [
-    path('upload/', upload_image, name='upload'),
+    path('', ImageAPIView.as_view(), name='images'),
+    path('<int:pk>/transform/', ImageTransformationAPIView.as_view(), name="transform")
 ]
